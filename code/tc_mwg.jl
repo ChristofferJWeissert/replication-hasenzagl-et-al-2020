@@ -32,7 +32,9 @@ function tc_mwg(y, h, nDraws, burnin, mwg_const, σʸ)
      R_ind = R .!= 0;
 
      # Projections
-     Z_ind[2:end, [1,2]] .= true; # All        -> PC cycle, t and t-1
+     #Z_ind[2:end, [1,2]] .= true; # All        -> PC cycle, t and t-1
+     Z_ind[2:3, [1,2]] .= true; # Labour market -> PC cycle, t and t-1
+     Z_ind[5:end, [1,2]] .= true; # Expect. and prices -> PC cycle, t and t-1
      Z_ind[7:end, 3]     .= true; # Expect.    -> PC cycle, t-2
      Z_ind[5:end, [4,5]] .= true; # Prices     -> EP cycle, t and t-1
 
