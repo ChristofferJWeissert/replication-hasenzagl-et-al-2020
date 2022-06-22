@@ -17,7 +17,8 @@ function tc_mwg(y, h, nDraws, burnin, mwg_const, σʸ)
      # -----------------------------------------------------------------------------------------------------------------
 
      d   = zeros(n);
-     Z   = [ones(n) [0; ones(n-1)] [zeros(n-2); ones(2)] [zeros(3); ones(n-3)] [zeros(4); ones(n-4)] [zeros(4); 1 ./ σʸ[end-3:end]]];
+     #Z   = [ones(n) [0; ones(n-1)] [zeros(n-2); ones(2)] [zeros(3); ones(n-3)] [zeros(4); ones(n-4)] [zeros(4); 1 ./ σʸ[end-3:end]]];
+     Z   = [[ones(3); 0; ones(n-4)] [0; ones(2); 0; ones(n-4)] [zeros(n-2); ones(2)] [zeros(3); ones(n-3)] [zeros(4); ones(n-4)] [zeros(4); 1 ./ σʸ[end-3:end]]]; # BC no affect on oil
      Z1a = kron(Matrix(I, 4, 4), [1, 0, 1])';                                                                                     # idio C, idio C+, idio trend
      Z1b = kron(Matrix(I, 2, 2), [1, 0, 1])';                                                                                     # idio C, idio C+, idio trend
      Z2  = kron(Matrix(I, 2, 2), [1, 0])';                                                                                                    # idio C, idio C+

@@ -14,8 +14,8 @@ include("code/tc_mwg.jl");
 @everywhere using DataFrames, Dates, FileIO, JLD2, LinearAlgebra, Random, Statistics, XLSX;
 @everywhere using Main.MetropolisWithinGibbs;
 
-data_path = "./data/inflation.xlsx"; # Data file
-end_presample_vec = [31, 12, 1998]; # End presample, day/month/year [it is used when run_type is 2 or 3]
+data_path = "./data/inflation_DK_MONAlong.xlsx"; # Data file
+end_presample_vec = [31, 12, 2012]; # End presample, day/month/year [it is used when run_type is 2 or 3]
 h = 8; # forecast horizon [it is used when run_type is 1 or 3]
 
 
